@@ -1,5 +1,5 @@
 {% set name = "cantok" %}
-{% set version = "0.0.30" %}
+{% set version = "0.0.31" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/cantok-{{ version }}.tar.gz
-  sha256: f2d68a5aa170e369ccc7ba3438ffadefdaf58184f594e499a2905764f063ee0a
+  sha256: 8e53220fae103a6e103623a3079ddd19cd52f7c6538f7034b31f34660486a2dc
 
 build:
   noarch: python
@@ -21,6 +21,7 @@ requirements:
     - pip
   run:
     - python >=3.7
+    - displayhooks >=0.0.2
 
 test:
   imports:
