@@ -21,7 +21,7 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - displayhooks >=0.0.2
+    - displayhooks >=0.0.4
 
 test:
   imports:
