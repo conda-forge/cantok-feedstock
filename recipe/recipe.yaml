@@ -1,0 +1,49 @@
+schema_version: 1
+
+context:
+  name: cantok
+  version: "0.0.36"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/cantok-${{ version }}.tar.gz
+  sha256: e1e60a7c436878b4f4b03422b7289a6c94f5bca7af76a9e5e587d9a6b4863823
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - setuptools ==68.0.0
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - displayhooks >=0.0.6
+    - typing_extensions
+    - transfunctions >=0.0.12
+
+tests:
+  - python:
+      imports:
+        - cantok
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+
+about:
+  summary: Implementation of the "Cancellation Token" pattern
+  license: MIT
+  license_file: LICENSE
+  homepage: https://github.com/pomponchik/cantok
+  documentation: http://cantok.readthedocs.io/
+
+extra:
+  recipe-maintainers:
+    - thewchan
