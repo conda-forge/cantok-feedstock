@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: cantok
-  version: "0.0.36"
+  version: "0.0.37"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/cantok-${{ version }}.tar.gz
-  sha256: e1e60a7c436878b4f4b03422b7289a6c94f5bca7af76a9e5e587d9a6b4863823
+  sha256: b301d1aecf81ddcbcfdf524c9197635d88acfb59411178c4ff84ebd25e0414e7
 
 build:
   number: 0
